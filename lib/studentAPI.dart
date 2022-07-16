@@ -65,6 +65,34 @@ class StudentApi{
       return null;
     }
   }
+  putStudent(int? id, String? name, String? email, String? dob) async{
+    try{
+      Map data = {
+        "name": name,
+        "email": email,
+        "dob": dob
+      };
+      print ("Data is $data");
+      String body = json.encode(data);
+
+      var url = Uri.parse("$studentUrl/$id?name=$name&&email=$email&&dob=$dob");
+      http.Response response = await http.put(
+        url,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8'
+        },
+        body: body
+      );
+
+      print(response.body);
+      print(response.statusCode);
+      return response.statusCode;
+    }
+    catch(e){
+      print(e);
+      return null;
+    }
+  }
 
   deleteStudent(int? id) async{
     try{

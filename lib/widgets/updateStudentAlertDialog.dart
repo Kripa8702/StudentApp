@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:student/studentAPI.dart';
+class UpdateStudentAlertDialog extends StatefulWidget {
+  int? id;
+  String? name;
+  String? email;
+  String? dob;
 
-import '../studentModel.dart';
-class DeleteStudentAlertDialog extends StatefulWidget {
- int? id;
- DeleteStudentAlertDialog({Key? key, required this.id}) : super(key: key);
+  UpdateStudentAlertDialog({Key? key, required this.id, required this.name, required this.email, required this.dob}) : super(key: key);
 
   @override
-  _DeleteStudentAlertDialogState createState() => _DeleteStudentAlertDialogState();
+  _UpdateStudentAlertDialogState createState() => _UpdateStudentAlertDialogState();
 }
 
-class _DeleteStudentAlertDialogState extends State<DeleteStudentAlertDialog> {
+class _UpdateStudentAlertDialogState extends State<UpdateStudentAlertDialog> {
   StudentApi studentApi = new StudentApi();
   bool loading = true;
   var status;
@@ -21,7 +23,11 @@ class _DeleteStudentAlertDialogState extends State<DeleteStudentAlertDialog> {
     super.initState();
   }
   void postData() async{
-    var state = await studentApi.deleteStudent(widget.id);
+    var state = await studentApi.putStudent(
+        widget.id,
+        widget.name,
+        widget.email,
+        widget.dob);
     if(state != null){
       setState(() {
         loading = false;
@@ -39,27 +45,25 @@ class _DeleteStudentAlertDialogState extends State<DeleteStudentAlertDialog> {
           Container(
               height: MediaQuery.of(context).size.height * 0.2,
               alignment: Alignment.center,
-
-              child: CircularProgressIndicator())
+              child: CircularProgressIndicator()
+          )
               :
           (status==200||status==500)?
           (status==200)?
           Container(
             height: MediaQuery.of(context).size.height * 0.2,
             alignment: Alignment.center,
-
-            child: Text('Deleted Successfully !'),
+            child: Text('Updated Successfully !',
+            ),
           ) :
           Container(
             height: MediaQuery.of(context).size.height * 0.2,
             alignment: Alignment.center,
-
-            child: Text('Student ID doesn\'t exist !'),
+            child: Text('Email Already Exists !'),
           ) :
           Container(
             height: MediaQuery.of(context).size.height * 0.2,
             alignment: Alignment.center,
-
             child: Text('Error!'),
           )
         ],

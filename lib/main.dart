@@ -4,6 +4,7 @@ import 'package:student/screens/addStudentDetailsScreen.dart';
 import 'package:student/screens/deleteStudentFromList.dart';
 import 'package:student/screens/studentList.dart';
 import 'package:get/get.dart';
+import 'package:student/screens/updateStudentFromList.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,6 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Card(
                   elevation: 6.5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)
+                  ),
                   child : Container(
                     padding: const EdgeInsets.all(25),
                     child: Row(
@@ -88,6 +92,9 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Card(
                   elevation: 6.5,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)
+                  ),
                   child : Container(
                     padding: const EdgeInsets.all(25),
                     child: Row(
@@ -118,11 +125,47 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Card(
                   elevation: 6.5,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)
+                  ),
                   child : Container(
                     padding: const EdgeInsets.all(25),
                     child: Row(
                       children: const [
                         Text('Delete Student',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: darkBlue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+              ),
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.all(20),
+            child: GestureDetector(
+              onTap: (){
+                print("tapped");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const UpdateStudentFromList()),
+                );
+              },
+              child: Card(
+                  elevation: 6.5,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)
+                  ),
+                  child : Container(
+                    padding: const EdgeInsets.all(25),
+                    child: Row(
+                      children: const [
+                        Text('Update Existing Student Details',
                           style: TextStyle(
                             fontSize: 20,
                             color: darkBlue,

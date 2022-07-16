@@ -22,6 +22,9 @@ class StudentCard extends StatelessWidget {
         margin:  EdgeInsets.all(height*0.01),
         child : Card(
           elevation: 6.5,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15)
+            ),
             child : Row(
               children: [
                 Container(

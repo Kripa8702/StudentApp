@@ -40,17 +40,28 @@ class _AddStatusAlertDiaogState extends State<AddStatusAlertDiaog> {
       content: Stack(
         children: [
           loading?
-          CircularProgressIndicator()
+          Container(
+            height: MediaQuery.of(context).size.height * 0.2,
+            alignment: Alignment.center,
+              child: CircularProgressIndicator()
+          )
               :
           (status==200||status==500)?
           (status==200)?
           Container(
-                child: Text('DONE'),
+            height: MediaQuery.of(context).size.height * 0.2,
+            alignment: Alignment.center,
+                child: Text('Added Successfully !',
+                ),
               ) :
           Container(
+            height: MediaQuery.of(context).size.height * 0.2,
+            alignment: Alignment.center,
             child: Text('Email Already Exists !'),
           ) :
           Container(
+            height: MediaQuery.of(context).size.height * 0.2,
+            alignment: Alignment.center,
                 child: Text('Error!'),
               )
         ],

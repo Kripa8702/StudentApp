@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:student/studentAPI.dart';
+import 'package:student/screens/getUpdatedDetails.dart';
 import 'package:student/studentModel.dart';
-import 'package:student/widgets/deleteStudentAlertDialog.dart';
-class StudentCardForDelete extends StatelessWidget {
+class StudentCardForUpdate extends StatelessWidget {
   final StudentModel studentModel;
-  const StudentCardForDelete({Key? key, required this.studentModel}) : super(key: key);
+
+  const StudentCardForUpdate({Key? key,  required this.studentModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +13,10 @@ class StudentCardForDelete extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: (){
-        showDialog(context: context,
-            builder: (BuildContext context){
-              return DeleteStudentAlertDialog(id: studentModel.id);
-            });
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => GetUpdatedDetails(studentModel: studentModel,)),
+        );
       },
       child: Container(
           margin:  EdgeInsets.all(height*0.01),
