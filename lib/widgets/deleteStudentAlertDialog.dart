@@ -3,7 +3,7 @@ import 'package:student/studentAPI.dart';
 
 import '../studentModel.dart';
 class DeleteStudentAlertDialog extends StatefulWidget {
- int? id;
+  String? id;
  DeleteStudentAlertDialog({Key? key, required this.id}) : super(key: key);
 
   @override

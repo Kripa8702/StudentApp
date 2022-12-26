@@ -14,7 +14,7 @@ class _GetUpdatedDetailsState extends State<GetUpdatedDetails> {
   String? name;
   String? email;
   String? dob;
-  String date = "2000=01=01";
+  String date = "2000-01-01";
   final controller1 = TextEditingController();
   final controller2 = TextEditingController();
   final controller3 = TextEditingController();
@@ -148,9 +148,9 @@ class _GetUpdatedDetailsState extends State<GetUpdatedDetails> {
                     print(controller2.text);
                     print(controller3.text);
                     setState(() {
-                      name = controller1.text;
-                      email = controller2.text;
-                      dob = controller3.text;
+                      name = controller1.text.isEmpty? widget.studentModel.name : controller1.text;
+                      email = controller2.text.isEmpty? widget.studentModel.email : controller2.text;
+                      dob = controller3.text.isEmpty? widget.studentModel.dob : controller3.text;
                     });
 
                     showDialog(context: context,

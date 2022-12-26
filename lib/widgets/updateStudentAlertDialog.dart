@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:student/studentAPI.dart';
 class UpdateStudentAlertDialog extends StatefulWidget {
-  int? id;
+  String? id;
   String? name;
   String? email;
   String? dob;

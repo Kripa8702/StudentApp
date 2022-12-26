@@ -63,12 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: BorderRadius.circular(15)
                   ),
                   child : Container(
-                    padding: const EdgeInsets.all(25),
+                    padding: const EdgeInsets.all(20),
                     child: Row(
                       children: const [
                         Text('All Students',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 17,
                             color: darkBlue,
                             fontWeight: FontWeight.bold,
                           ),
@@ -96,12 +96,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.circular(15)
                   ),
                   child : Container(
-                    padding: const EdgeInsets.all(25),
+                    padding: const EdgeInsets.all(20),
                     child: Row(
                       children: const [
                         Text('Add Student',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 17,
                             color: darkBlue,
                             fontWeight: FontWeight.bold,
                           ),
@@ -129,12 +129,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.circular(15)
                   ),
                   child : Container(
-                    padding: const EdgeInsets.all(25),
+                    padding: const EdgeInsets.all(20),
                     child: Row(
                       children: const [
                         Text('Delete Student',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 17,
                             color: darkBlue,
                             fontWeight: FontWeight.bold,
                           ),
@@ -162,12 +162,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.circular(15)
                   ),
                   child : Container(
-                    padding: const EdgeInsets.all(25),
+                    padding: const EdgeInsets.all(20),
                     child: Row(
                       children: const [
                         Text('Update Existing Student Details',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 17,
                             color: darkBlue,
                             fontWeight: FontWeight.bold,
                           ),

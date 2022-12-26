@@ -40,7 +40,7 @@ class StudentDetails extends StatelessWidget {
             ),
             Container(
               height: height*0.5,
-                width: width*0.7,
+                width: width*0.8,
                 // margin: EdgeInsets.only(top: height * 0.04),
                 alignment: Alignment.center,
                 child: Column(

@@ -16,7 +16,7 @@ class _AddStudentDetailsScreenState extends State<AddStudentDetailsScreen> {
   String? name;
   String? email;
   String? dob;
-  String date = "2000=01=01";
+  String date = "2000-01-01";
   final controller1 = TextEditingController();
   final controller2 = TextEditingController();
   final controller3 = TextEditingController();
